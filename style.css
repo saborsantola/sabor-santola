@@ -1,0 +1,470 @@
+/* ===========================
+   RESET E BASE
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --verde: #00703c;
+  --amarelo-escuro: #f2ce00;
+  --branco: #ffffff;
+  --cinza-claro: #f5f5f5;
+  --cinza-escuro: #333333;
+}
+
+body {
+  background-color: var(--cinza-claro);
+  color: var(--cinza-escuro);
+  font-size: 18px;
+  line-height: 5;
+}
+
+/* ===========================
+   CONTAINER PADRÃO CENTRALIZADO
+=========================== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===========================
+   INTRO LAYER (TELA DE BOAS VINDAS)
+=========================== */
+.intro-layer {
+  position: fixed;
+  inset: 0;
+  background-color: var(--verde);
+  color: var(--branco);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.intro-layer img {
+  max-width: 300px;
+  width: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+}
+
+.intro-layer p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+/* ===========================
+   HEADER + NAVBAR FIXA
+=========================== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--amarelo-escuro);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 120px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2 ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: var(--branco);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: var(--verde);
+  outline: none;
+}
+
+/* ===========================
+   PRATO DO DIA - SLIDESHOW
+=========================== */
+.prato-do-dia {
+  margin-top: 80px; /* compensar navbar fixa */
+  background-color: var(--branco);
+  padding: 50px 20px;
+  text-align: center;
+  box-shadow: inset 0 0 20px rgba(0, 112, 60, 0.1);
+  border-radius: 20px;
+  user-select: none;
+}
+
+.prato-do-dia h2 {
+  color: var(--branco);
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  letter-spacing: 1.2px;
+}
+
+.slideshow {
+  max-width: 720px;
+  height: 420px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background-color: #eee;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 20px;
+}
+
+.slideshow img.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* ===========================
+   SEÇÕES: SOBRE, EMENTA, GALERIA, AVALIAÇÕES, CONTACTOS
+=========================== */
+section {
+  padding: 60px 20px;
+  background-color: var(--branco);
+  border-radius: 20px;
+  margin: 40px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--verde);
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+h3 {
+  color: var(--amarelo-escuro);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+/* SOBRE NÓS E EMENTA */
+.sobre-nos p,
+.ementa ul {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--cinza-escuro);
+  font-weight: 500;
+}
+
+.categoria {
+  margin-bottom: 35px;
+}
+
+.categoria ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.categoria ul li {
+  background-color: var(--cinza-claro);
+  padding: 15px 25px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: var(--verde);
+  box-shadow: inset 0 0 8px rgba(0, 112, 60, 0.12);
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.categoria ul li:hover {
+  background-color: #d9f1d9;
+}
+
+/* GALERIA */
+.galeria .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.galeria .grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 5px 18px rgba(0, 112, 60, 0.25);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria .grid img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 30px rgba(0, 112, 60, 0.45);
+}
+
+/* AVALIAÇÕES */
+.avaliacoes {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.form-comentario {
+  margin-bottom: 35px;
+}
+
+.form-comentario textarea {
+  width: 100%;
+  min-height: 90px;
+  padding: 15px 20px;
+  border-radius: 15px;
+  border: 2px solid var(--verde);
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.form-comentario textarea:focus {
+  outline: none;
+  border-color: var(--amarelo-escuro);
+  box-shadow: 0 0 8px var(--amarelo-escuro);
+}
+
+.form-comentario button {
+  margin-top: 15px;
+  padding: 12px 30px;
+  background-color: var(--amarelo-escuro);
+  border: none;
+  border-radius: 15px;
+  font-weight: 700;
+  color: var(--branco);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-comentario button:hover {
+  background-color: var(--verde);
+}
+
+/* LISTA DE COMENTÁRIOS */
+.comentarios-lista {
+  text-align: left;
+  max-height: 320px;
+  overflow-y: auto;
+  background-color: var(--cinza-claro);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 12px rgba(0, 112, 60, 0.15);
+}
+
+.comentario-item {
+  background-color: var(--branco);
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 5px 15px rgba(0, 112, 60, 0.15);
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.comentario-item:hover {
+  background-color: #e6f0e6;
+}
+
+.comentario-texto {
+  font-size: 1.05rem;
+  color: var(--cinza-escuro);
+  margin-bottom: 8px;
+}
+
+.avaliacao-estrelas-input {
+  direction: rtl;
+  text-align: left;
+  display: flex;
+  justify-content: start;
+  margin-bottom: 10px;
+}
+.avaliacao-estrelas-input input[type="radio"] {
+  display: none;
+}
+.avaliacao-estrelas-input label {
+  font-size: 25px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.avaliacao-estrelas-input input[type="radio"]:checked ~ label,
+.avaliacao-estrelas-input label:hover,
+.avaliacao-estrelas-input label:hover ~ label {
+  color: rgb(255, 51, 0);
+}
+
+.comentario-item {
+  position: relative;
+  background: #f9f9f9;
+  border-left: 4px solid var(--verde, green);
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+.avaliacao-estrelas {
+  margin-bottom: 6px;
+}
+.like-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+.like-btn.liked {
+  color: var(--verde, green);
+}
+
+/* BOTÃO DE LIKE */
+.like-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  background-color: var(--amarelo-escuro);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--branco);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.like-btn.liked {
+  background-color: var(--verde);
+}
+
+/* CONTACTOS
+
+
+
+
+
+
+Dito pelo ChatGPT:
+*/
+.contactos {
+max-width: 600px;
+margin: 0 auto;
+font-size: 1.1rem;
+color: var(--cinza-escuro);
+line-height: 1.6;
+}
+
+.contactos p,
+.contactos a {
+margin-bottom: 10px;
+display: block;
+color: var(--verde);
+text-decoration: none;
+}
+
+.contactos a:hover,
+.contactos a:focus {
+text-decoration: underline;
+}
+
+/* ===========================
+RESPONSIVO
+=========================== */
+@media (max-width: 768px) {
+.header-inner {
+flex-direction: column;
+gap: 12px;
+}
+
+nav ul {
+flex-direction: column;
+gap: 12px;
+}
+
+.prato-do-dia {
+padding: 30px 15px;
+}
+
+.slideshow {
+height: 280px;
+}
+
+.galeria .grid {
+grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+section {
+padding: 40px 15px;
+}
+}
+.prato-do-dia {
+  margin: 40px 0;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('imagem10.png.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+  border-radius: 10px;
+  color: white;
+}

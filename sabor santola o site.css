@@ -1,0 +1,164 @@
+.container {
+    max-width: 1200px;    /* largura máxima confortável */
+    margin: 0 auto;       /* centraliza horizontalmente */
+    padding: 0 20px;      /* pequenas margens laterais */
+   }
+   /* Espaçamento e linha separadora para todas as seções */
+
+section {
+
+    padding: 80px 0;                   /* 80px em cima e em baixo */
+  
+    border-bottom: 1px solid #e0d6cc;  /* linha fina na base */
+  
+  }
+  
+  /* Remove a borda da última seção para não ficar linha no rodapé */
+  
+  section:last-of-type {
+  
+    border-bottom: none;
+  
+  } 
+  
+body {
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #fffaf5;
+
+    color: #333;
+
+}
+
+header {
+
+    background-color: #d35400;
+
+    padding: 10px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+.logo {
+
+    height: 60px;
+
+}
+
+nav ul {
+
+    list-style: none;
+
+    display: flex;
+
+    gap: 15px;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+nav ul li a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+nav ul li a:hover {
+
+    text-decoration: underline;
+
+}
+
+.hero {
+
+    background-image: url('fundo-prato.jpg'); /* Substituir por uma imagem real */
+
+    background-size: cover;
+
+    background-position: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    color: white;
+
+}
+
+.hero h1 {
+
+    font-size: 2.5em;
+
+    margin-bottom: 10px;
+
+}
+
+footer {
+
+    background-color: #2c3e50;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 15px;
+
+    margin-top: 50px;
+
+} 
+/* Seção Sobre Nós */
+.sobre-nos {
+    padding: 60px 20px;
+    background-color: #fff3e0;
+    text-align: center;
+ }
+ .sobre-nos h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #d35400;
+ }
+ .sobre-nos p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    line-height: 1.6em;
+ }
+ .cardapio {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+ }
+ .cardapio h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #d35400;
+ }
+ .cardapio .categoria {
+    margin-bottom: 40px;
+ }
+ .cardapio .categoria h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ff8c00;
+ }
+ .cardapio .categoria ul {
+    list-style: none;
+    padding: 0;
+ }
+ .cardapio .categoria ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;

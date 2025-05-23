@@ -1,0 +1,16 @@
+.sobre-nos {
+ padding: 60px 20px;
+ background-color: #fff3e0;
+ text-align: center;
+}
+.sobre-nos h2 {
+ font-size: 2em;
+ margin-bottom: 15px;
+ color: #d35400;
+}
+.sobre-nos p {
+ max-width: 800px;
+ margin: 0 auto;
+ font-size: 1.1em;
+ line-height: 1.6em;
+}
